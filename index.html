@@ -40,6 +40,7 @@
             content: "";
             clear: both;
             display: flex;
+            flex-direction: row;
             justify-content: center;
         }
 
@@ -58,6 +59,20 @@
 
         .overview {
             text-align: left;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .row {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .column {
+                float: left;
+                width: 100%;
+                padding: 0px;
+            }
         }
     </style>
 
