@@ -6,9 +6,10 @@
 
     <style>
         body {
-            width: 60%;
+            width: 80%;
             margin: 0 auto;
             background-color: #f2f2f2;
+            font-size: 18px; /* default 16px */
         }
 
         a:link {
@@ -42,11 +43,12 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            padding-bottom: 5px;
         }
 
         .column {
             float: left;
-            width: 22%;
+            width: 20%;
             padding: 5px;
         }
 
@@ -98,25 +100,25 @@
 
     <div class="row">
         <div class="column">
-            <a href="https://kaiyangzhou.github.io/" target="_blank">
+            <a href="https://kaiyangzhou.github.io/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Kaiyang Zhou<br>NTU</div>
             </a>
         </div>
         <div class="column">
-            <a href="https://liuziwei7.github.io/" target="_blank">
+            <a href="https://liuziwei7.github.io/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Ziwei Liu<br>NTU</div>
             </a>
         </div>
         <div class="column">
-            <a href="http://web.mit.edu/phillipi/" target="_blank">
+            <a href="http://web.mit.edu/phillipi/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Phillip Isola<br>MIT</div>
             </a>
         </div>
         <div class="column">
-            <a href="https://hjbahng.github.io/" target="_blank">
+            <a href="https://hjbahng.github.io/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Hyojin Bahng<br>MIT</div>
             </a>
@@ -125,19 +127,19 @@
 
     <div class="row">
         <div class="column">
-            <a href="https://people.csail.mit.edu/ludwigs/" target="_blank">
+            <a href="https://people.csail.mit.edu/ludwigs/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Ludwig Schmidt<br>University of Washington</div>
             </a>
         </div>
         <div class="column">
-            <a href="https://sarahpratt.github.io/" target="_blank">
+            <a href="https://sarahpratt.github.io/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Sarah Pratt<br>University of Washington</div>
             </a>
         </div>
         <div class="column">
-            <a href="https://www.jasonwei.net/" target="_blank">
+            <a href="https://www.jasonwei.net/">
                 <img src="people/xx.jpg" alt="xx">
                 <div>Jason Wei<br>Google Brain</div>
             </a>
@@ -148,9 +150,9 @@
 <div class="container">
     <h2>Overview</h2>
     <div class="overview">
-        <p>In natural language processing, prompting has been widely used to adapt large-scale pre-trained models like GPT-3 or BERT. This is done by adding a small number of hand-crafted or learnable parameters to a model’s input space without modifying any pre-trained weight. Such a paradigm has sparked huge interests in the vision domain, which is largely motivated by the dramatic scaling of vision models in terms of size, data and modality that has made downstream adaptation a challenging problem.</p>
+        <p>In natural language processing, prompting has been widely used to adapt large-scale pre-trained models like GPT-3 or BERT. This is done by adding a small number of hand-crafted or learnable parameters to a model’s input space without modifying any pre-trained weight. Such a paradigm has sparked huge interest in the vision domain, which is largely motivated by the dramatic scaling of vision models in size, data and modality that has made downstream adaptation a challenging problem.</p>
 
-        <p>In the context of computer vision, the concept of prompting has been explored in various ways: learning some input tokens for a Transformer encoder; prompting a vision-language model for content editing or to perform zero-shot, open-vocabulary recognition; etc. The potential of prompting methods has been demonstrated in wide-ranging problem domains, e.g., image classification, object detection, semantic segmentation, and image generation and editing.</p>
+        <p>In the context of computer vision, the concept of prompting has been explored in various ways: learning some input tokens for a Transformer encoder; prompting a vision-language model for content editing or to perform zero-shot open-vocabulary recognition; etc. The potential of prompting methods has been demonstrated in wide-ranging problem domains, e.g., image classification, object detection, semantic segmentation, and image generation and editing.</p>
 
         <p>In this tutorial, we aim to give a comprehensive background on prompting—by building connections between research in vision and language—and review the latest studies that design prompting methods to tackle computer vision problems. We will also cover topics related to large-scale vision models, such as pre-training and weights interpolation.</p>
     </div>
@@ -166,12 +168,12 @@
         
         <tr>
             <td>08:00 am - 08:00 am</td>
-            <td>Prompt learning for visual recognition and generation</td>
+            <td>Prompt learning for visual recognition and generation (by <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a> & <a href="https://liuziwei7.github.io/">Ziwei Liu</a>)</td>
         </tr>
 
         <tr>
             <td>08:00 am - 08:00 am</td>
-            <td>Visual prompting</td>
+            <td>Visual prompting (by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> & <a href="https://hjbahng.github.io/">Hyojin Bahng</a>)</td>
         </tr>
 
         <tr>
@@ -181,12 +183,12 @@
 
         <tr>
             <td>08:00 am - 08:00 am</td>
-            <td>Improved model adaptation via weight interpolation and prompt generation</td>
+            <td>Improved model adaptation via weight interpolation and prompt generation (by <a href="https://people.csail.mit.edu/ludwigs/">Ludwig Schmidt</a> & <a href="https://sarahpratt.github.io/">Sarah Pratt</a>)</td>
         </tr>
 
         <tr>
             <td>08:00 am - 08:00 am</td>
-            <td>Prompting language-vision and multimodal models</td>
+            <td>Prompting language-vision and multimodal models (by <a href="https://www.jasonwei.net/">Jason Wei</a>)</td>
         </tr>
     </table>
 </div>
