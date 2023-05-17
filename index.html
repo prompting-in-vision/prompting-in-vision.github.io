@@ -149,11 +149,13 @@
 <div class="container">
     <h2>Overview</h2>
     <div class="text-content">
-        <p>In natural language processing, prompting has been widely used to adapt large-scale pre-trained models like GPT-3 or BERT. This is done by adding a small number of hand-crafted or learnable parameters to a model’s input space without modifying any pre-trained weight. Such a paradigm has sparked huge interest in the vision domain, which is largely motivated by the dramatic scaling of vision models in size, data and modality, making downstream adaptation a challenging problem.</p>
+        <!-- <p>In natural language processing, prompting has been widely used to adapt large-scale pre-trained models like GPT-3 or BERT. This is done by adding a small number of hand-crafted or learnable parameters to a model’s input space without modifying any pre-trained weight. Such a paradigm has sparked huge interest in the vision domain, which is largely motivated by the dramatic scaling of vision models in size, data and modality, making downstream adaptation a challenging problem.</p>
 
         <p>In the context of computer vision, the concept of prompting has been explored in various ways: learning some input tokens for a Transformer encoder; prompting a vision-language model for content editing or to perform zero-shot open-vocabulary recognition; etc. The potential of prompting methods has been demonstrated in wide-ranging problem domains, e.g., image classification, object detection, semantic segmentation, and image generation and editing.</p>
 
-        <p>In this tutorial, we aim to give a comprehensive background on prompting—by building connections between research in vision and language—and review the latest studies that design prompting methods to tackle computer vision problems. We will also cover topics related to large-scale vision models, such as pre-training and weights interpolation.</p>
+        <p>In this tutorial, we aim to give a comprehensive background on prompting—by building connections between research in vision and language—and review the latest studies that design prompting methods to tackle computer vision problems. We will also cover topics related to large-scale vision models, such as pre-training and weights interpolation.</p> -->
+
+        <p>Originated from natural language processing, <i>prompting</i> has recently swepted the computer vision community, bringing disruptive changes to many computer vision applications, such as image recognition and image generation. Compared to the traditional fixed-once-learned architecture like a linear classifier trained to recognize a particular set of categories, prompting offers a new paradigm that allows the model to perform new tasks (e.g., recognizing new categories) by only modifying a small number of parameters in the model's input space, such as hand-crafting task-specific textual instructions, while keeping the majority of the pre-trained parameters unchanged. Within a short period of time, the potential of prompting has been demonstrated in wide-ranging problem domains, e.g., image classification, object detection, semantic segmentation, image generation and editing, and robot control. In this tutorial, we aim to give a comprehensive background on prompting by building connections between research in computer vision and natural language processing, and review the latest advances that use prompting to tackle computer vision problems.</p>
     </div>
 </div>
 
@@ -164,15 +166,15 @@
             <td>09:00 am - 09:10 am</td>
             <td>Opening remarks (by <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a>)</td>
         </tr>
-        
-        <tr>
-            <td>09:10 am - 09:50 am</td>
-            <td>Prompt learning for visual recognition and generation (by <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a> & <a href="https://liuziwei7.github.io/">Ziwei Liu</a>)</td>
-        </tr>
 
         <tr>
+            <td>09:10 am - 09:50 am</td>
+            <td>Teaching language models to reason (by <a href="https://dennyzhou.github.io/">Denny Zhou</a>)</td>
+        </tr>
+        
+        <tr>
             <td>09:50 am - 10:30 am</td>
-            <td>Visual prompting (by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> & <a href="https://hjbahng.github.io/">Hyojin Bahng</a>)</td>
+            <td>Prompt learning for visual recognition and generation (by <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a> & <a href="https://liuziwei7.github.io/">Ziwei Liu</a>)</td>
         </tr>
 
         <tr>
@@ -182,12 +184,12 @@
 
         <tr>
             <td>10:40 am - 11:20 am</td>
-            <td>Improved model adaptation via weight interpolation and prompt generation (by <a href="https://people.csail.mit.edu/ludwigs/">Ludwig Schmidt</a> & <a href="https://sarahpratt.github.io/">Sarah Pratt</a>)</td>
+            <td>Visual prompting (by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> & <a href="https://hjbahng.github.io/">Hyojin Bahng</a>)</td>
         </tr>
 
         <tr>
             <td>11:20 am - 12:00 pm</td>
-            <td>Prompting language-vision and multimodal models (by <a href="https://dennyzhou.github.io/">Denny Zhou</a>)</td>
+            <td>Improved model adaptation via weight interpolation and prompt generation (by <a href="https://people.csail.mit.edu/ludwigs/">Ludwig Schmidt</a> & <a href="https://sarahpratt.github.io/">Sarah Pratt</a>)</td>
         </tr>
     </table>
 </div>
