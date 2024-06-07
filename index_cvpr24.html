@@ -6,7 +6,7 @@
 
     <style>
         body {
-            width: 95%;
+            width: 100%;
             margin: 0 auto;
             background-color: #f2f2f2;
             font-size: 18px; /* default 16px */
@@ -28,13 +28,19 @@
             max-width: 100%;
             max-height: 100%;
         }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
         td {
+            padding: 5px 10px;
             text-align: left;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 15px;
-            padding-right: 0px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
 
         .row {
@@ -126,9 +132,9 @@
         <p>Important dates and deadlines:</p>
 
         <ul>
-            <li>Paper submission: Mar 15 '24 09:00 PM UTC</li>
-            <li>Paper decision: Apr 05 '24 08:00 PM UTC</li>
-            <li>Camera ready: Apr 14 '24 11:59 PM PT</li>
+            <li>Paper submission: <s>Mar 15 '24 09:00 PM UTC</s></li>
+            <li>Paper decision: <s>Apr 05 '24 08:00 PM UTC</s></li>
+            <li>Camera ready: <s>Apr 14 '24 11:59 PM PT</s></li>
         </ul>
 
         <p>Submission instructions:</p>
@@ -205,14 +211,175 @@
 
 <div class="container">
     <h2>Schedule</h2>
+    <table>
+        <tr>
+            <td>09:00 am - 09:10 am</td>
+            <td>Opening</td>
+            <td></td>
+            <td></td>
+        </tr>
 
-    TBD.
+        <tr>
+            <td>09:10 am - 09:40 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://www.alanesuhr.com/">Alane Suhr</a></td>
+            <td>LLMs as Agents</td>
+        </tr>
+
+        <tr>
+            <td>09:40 am - 10:10 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://www.cs.cornell.edu/~bharathh/">Bharath Hariharan</a></td>
+            <td>TBD</td>
+        </tr>
+
+        <tr>
+            <td>10:10 am - 10:40 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://ibalazevic.github.io/">Ivana Balazevic</a></td>
+            <td>Towards Effortless Adaptation of Image and Video Models</td>
+        </tr>
+
+        <tr>
+            <td>10:40 am - 11:00 am</td>
+            <td>Coffee break ☕</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>11:00 am - 11:30 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://people.eecs.berkeley.edu/~efros/">Alexei A. Efros</a></td>
+            <td>TBD</td>
+        </tr>
+
+        <tr>
+            <td>11:30 am - 11:45 am</td>
+            <td>Oral presentation</td>
+            <td><a href="https://www.bertinibaldassini.com/">Folco Bertini Baldassini</a></td>
+            <td>What Makes Multimodal In-Context Learning Work?</td>
+        </tr>
+
+        <tr>
+            <td>11:45 am - 12:00 pm</td>
+            <td>Oral presentation</td>
+            <td><a href="https://scholar.google.com/citations?user=tktqkhwAAAAJ&hl=en">Hao Chen</a></td>
+            <td>Conv-Adapter: Exploring Parameter Efficient Transfer Learning for ConvNets</td>
+        </tr>
+
+        <tr>
+            <td>12:00 pm - 02:00 pm</td>
+            <td>Lunch break 🥪</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>02:00 pm - 02:30 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://sites.google.com/view/showlab">Mike Z. Shou</a></td>
+            <td>Prompting in Video Understanding and Generation</td>
+        </tr>
+
+        <tr>
+            <td>02:30 pm - 03:00 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://web.mit.edu/phillipi/">Phillip Isola</a></td>
+            <td>TBD</td>
+        </tr>
+
+        <tr>
+            <td>03:00 pm - 04:00 pm</td>
+            <td>Poster session 🪧</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>04:00 pm - 04:30 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://xiaolonw.github.io/">Xiaolong Wang</a></td>
+            <td>TBD</td>
+        </tr>
+
+        <tr>
+            <td>04:30 pm - 05:00 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://pages.cs.wisc.edu/~yongjaelee/">Yong Jae Lee</a></td>
+            <td>Prompting in Large Multimodal Models</td>
+        </tr>
+
+        <tr>
+            <td>05:00 pm - 05:30 pm</td>
+            <td>Panel discussion</td>
+            <td><a href="https://people.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>05:30 pm - 05:40 pm</td>
+            <td>Closing</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 </div>
 
 <div class="container">
     <h2>Accepted Papers</h2>
 
-    TBD.
+    <table>
+        <tr>
+            <td><b>Title</b></td>
+            <td><b>Author</b></td>
+        </tr>
+        
+        <tr>
+            <td>What Makes Multimodal In-Context Learning Work?</td>
+            <td>Folco Bertini Baldassini, Mustafa Shukor, Matthieu Cord, Laure Soulier, Benjamin Piwowarski</td>
+        </tr>
+        
+        <tr>
+            <td>Conv-Adapter: Exploring Parameter Efficient Transfer Learning for ConvNets</td>
+            <td>Hao Chen, Ran Tao, Han Zhang, Yidong Wang, Xiang Li, Wei Ye, Jindong Wang, Guosheng Hu, Marios Savvides</td>
+        </tr>
+
+        <tr>
+            <td>Enhancing Visual Question Answering through Question-Driven Image Captions as Prompts</td>
+            <td>Övgü Özdemir, Erdem Akagündüz</td>
+        </tr>
+
+        <tr>
+            <td>AAPL: Adding Attributes to Prompt Learning</td>
+            <td>Gahyeon Kim, Sohee Kim, Seokju Lee</td>
+        </tr>
+
+        <tr>
+            <td>Prompting Foundational Models for Omni-supervised Instance Segmentation</td>
+            <td>Arnav Mohanty Das, Ritwick Chaudhry, Kaustav Kundu, Davide Modolo</td>
+        </tr>
+
+        <tr>
+            <td>On the low-shot transferability of [V]-Mamba</td>
+            <td>Diganta Misra, Jay Gala, Antonio Orvieto</td>
+        </tr>
+
+        <tr>
+            <td>Low-Rank Few-Shot Adaptation of Vision-Language Models</td>
+            <td>Maxime Zanella, Ismail Ben Ayed</td>
+        </tr>
+
+        <tr>
+            <td>PointPrompt: A Multi-modal Prompting Dataset for Segment Anything Model</td>
+            <td>Jorge Quesada, Mohammad Alotaibi, Mohit Prabhushankar, Ghassan AlRegib</td>
+        </tr>
+
+        <tr>
+            <td>Uncovering the Hidden Cost of Model Compression</td>
+            <td>Diganta Misra, Muawiz Sajjad Chaudhary, Bharat Runwal, Agam Goyal, Pin-Yu Chen</td>
+        </tr>
+    </table>
 </div>
 
 <div class="container">
