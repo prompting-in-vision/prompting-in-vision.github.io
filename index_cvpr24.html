@@ -1,11 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
+    <title>Prompting in Vision</title>
+
+    <style>
+        body {
+            width: 100%;
+            margin: 0 auto;
+            background-color: #f2f2f2;
+            font-size: 18px; /* default 16px */
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: orange;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px 10px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .row {
+            content: "";
+            clear: both;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+
+        .column {
+            float: left;
+            width: 15%;
+            padding: 5px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 15px;
+            margin: 20px;
+        }
+
+        .text-content {
+            text-align: left;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .row {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .column {
+                float: left;
+                width: 100%;
+                padding: 0px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=index.html">
-    <title>Redirecting...</title>
+    <meta name="description" content="CVPR 2024 Workshop on Prompting in Vision">
+    <meta name="keywords" content="CVPR, Computer Vision, Prompting">
+    <meta name="author" content="Kaiyang Zhou et al.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    If you are not redirected automatically, follow this <a href="index.html">link</a>.
+
+<div class="container">
+    <h2>CVPR 2024 Workshop on <i>Prompting in Vision</i></h2>
+    <h2>17 June 2024, 9 AM - 5:40 PM</h2>
+    <h3>Seattle Convention Center, Seattle WA, USA</h3>
+    <img src="images/cvpr24_banner.jpeg" width="50%" alt="CVPR2024">
+</div>
+
+<div class="container">
+    <h2>Overview</h2>
+
+    <div class="text-content">
+        <p>Building general-purpose computer vision models is a multifaceted challenge that requires a system capable of understanding and interpreting a wide array of visual problems. Drawing inspiration from the field of NLP, the concept of “prompting” has been identified as a promising method for adapting large vision models to perform various downstream tasks. This adaptation process is streamlined by integrating a prompt during the inference stage.</p>
+
+        <p>Prompts can take several forms in the context of computer vision. They can be as straightforward as providing visual examples of the input and the desired output, thereby giving the model a clear reference for what it needs to accomplish. Alternatively, prompts can be more abstract, such as a series of dots, boxes, or scribbles that guide the model's attention or highlight features within an image. Beyond these visual cues, prompts can also include learned tokens or indicators that are associated with particular outputs through the model's training process. Moreover, prompts can be constructed using language-based task descriptions. In this scenario, textual information is used to direct the model's processing of visual data, bridging the gap between visual perception and language understanding.</p>
+
+        <p>This workshop aims to provide a platform for pioneers in <i>prompting for vision</i> to share recent advancements, showcase novel techniques and applications, and discuss open research questions about how the strategic use of prompts can unlock new levels of adaptability and performance in computer vision.</p>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Call for Papers</h2>
+
+    <div class="text-content">
+        <p>We consider papers that use prompting for computer vision in the following topics:</p>
+        
+        <ul>
+            <li>Prompt engineering/learning for computer vision models</li>
+            <li>Interpretability and explainability</li>
+            <li>Robustness and generalization</li>
+            <li>Ethics and bias in prompting</li>
+            <li>Few-shot learning/continual learning/transfer learning/domain adaptation/domain generalization</li>
+            <li>Vision applications (classification, detection, segmentation, etc.)</li>
+            <li>Multimodal applications (text2image, text2video, chatbots, etc.)</li>
+        </ul>
+
+        <p>Important dates and deadlines:</p>
+
+        <ul>
+            <li>Paper submission: <s>Mar 15 '24 09:00 PM UTC</s></li>
+            <li>Paper decision: <s>Apr 05 '24 08:00 PM UTC</s></li>
+            <li>Camera ready: <s>Apr 14 '24 11:59 PM PT</s></li>
+        </ul>
+
+        <p>Submission instructions:</p>
+
+        <ul>
+            <li>All submissions will be handled electronically via <a href="https://openreview.net/group?id=thecvf.com/CVPR/2024/Workshop/PV&referrer=%5BHomepage%5D(%2F)">OpenReview</a>.</li>
+            <li>Submissions should be formatted using the official <a href="https://github.com/cvpr-org/author-kit/releases">CVPR 2024 template</a>.</li>
+            <li>Submissions must adhere to the CVPR style, format, and length restrictions.</li>
+            <li>Double-blind reviewing: The reviewing process will be double blind so submissions must be anonymized.</li>
+            <li>Dual submission policy: By registering or submitting a manuscript, the authors acknowledge that it has not been previously published or accepted for publication in substantially similar form in any peer-reviewed venue including journal, conference or workshop, or archival forum.</li>
+            <li>Accepted papers will be published in conjunction with CVPR 2024 proceedings.</li>
+            <li>Top-rated papers will be showcased as oral presentations in the workshop.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Speakers</h2>
+
+    <div class="row">
+        <div class="column">
+            <a href="https://people.eecs.berkeley.edu/~efros/">
+                <img src="people/alyosha.jpeg" alt="Alexei A. Efros">
+                <div>Alexei A. Efros<br>Berkeley</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://ibalazevic.github.io/">
+                <img src="people/ivana.jpeg" alt="Ivana Balazevic">
+                <div>Ivana Balazevic<br>DeepMind</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://www.cs.cornell.edu/~bharathh/">
+                <img src="people/bharath.jpeg" alt="Bharath Hariharan">
+                <div>Bharath Hariharan<br>Cornell</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://web.mit.edu/phillipi/">
+                <img src="people/phillip.jpeg" alt="Phillip Isola">
+                <div>Phillip Isola<br>MIT</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <a href="https://pages.cs.wisc.edu/~yongjaelee/">
+                <img src="people/yongjaelee.jpeg" alt="Yong Jae Lee">
+                <div>Yong Jae Lee<br>UW–Madison</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://www.alanesuhr.com/">
+                <img src="people/alane_suhr.jpeg" alt="Alane Suhr">
+                <div>Alane Suhr<br>Berkeley</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://sites.google.com/view/showlab">
+                <img src="people/zhengshou.jpeg" alt="Mike Z. Shou">
+                <div>Mike Z. Shou<br>NUS</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://xiaolonw.github.io/">
+                <img src="people/xiaolong.jpeg" alt="Xiaolong Wang">
+                <div>Xiaolong Wang<br>UCSD</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Schedule</h2>
+    <table>
+        <tr>
+            <td><b>Time</b></td>
+            <td><b>Event</b></td>
+            <td><b>Speaker</b></td>
+            <td><b>Content</b></td>
+        </tr>
+
+        <tr>
+            <td>09:00 am - 09:10 am</td>
+            <td>Opening</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>09:10 am - 09:40 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://www.alanesuhr.com/">Alane Suhr</a></td>
+            <td>LLMs as Agents</td>
+        </tr>
+
+        <tr>
+            <td>09:40 am - 10:10 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://www.cs.cornell.edu/~bharathh/">Bharath Hariharan</a></td>
+            <td>TBD</td>
+        </tr>
+
+        <tr>
+            <td>10:10 am - 10:40 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://ibalazevic.github.io/">Ivana Balazevic</a></td>
+            <td>Towards Effortless Adaptation of Image and Video Models</td>
+        </tr>
+
+        <tr>
+            <td>10:40 am - 11:00 am</td>
+            <td>Coffee break ☕</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>11:00 am - 11:30 am</td>
+            <td>Invited talk</td>
+            <td><a href="https://people.eecs.berkeley.edu/~efros/">Alexei A. Efros</a></td>
+            <td>Visual Prompting Then and Now</td>
+        </tr>
+
+        <tr>
+            <td>11:30 am - 11:45 am</td>
+            <td>Oral presentation</td>
+            <td><a href="https://www.bertinibaldassini.com/">Folco Bertini Baldassini</a></td>
+            <td>What Makes Multimodal In-Context Learning Work?</td>
+        </tr>
+
+        <tr>
+            <td>11:45 am - 12:00 pm</td>
+            <td>Oral presentation</td>
+            <td><a href="https://scholar.google.com/citations?user=tktqkhwAAAAJ&hl=en">Hao Chen</a></td>
+            <td>Conv-Adapter: Exploring Parameter Efficient Transfer Learning for ConvNets</td>
+        </tr>
+
+        <tr>
+            <td>12:00 pm - 02:00 pm</td>
+            <td>Lunch break 🥪</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>02:00 pm - 02:30 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://pages.cs.wisc.edu/~yongjaelee/">Yong Jae Lee</a></td>
+            <td>Visual Prompting in Large Multimodal Models</td>
+        </tr>
+
+        <tr>
+            <td>02:30 pm - 03:00 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://web.mit.edu/phillipi/">Phillip Isola</a></td>
+            <td>A Brief Prehistory of Visual Prompting</td>
+        </tr>
+
+        <tr>
+            <td>03:00 pm - 04:00 pm</td>
+            <td>Poster session 🪧</td>
+            <td></td>
+            <td>Poster boards: #36-45</td>
+        </tr>
+
+        <tr>
+            <td>04:00 pm - 04:30 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://xiaolonw.github.io/">Xiaolong Wang</a></td>
+            <td>TBD</td>
+        </tr>
+
+        <tr>
+            <td>04:30 pm - 05:00 pm</td>
+            <td>Invited talk</td>
+            <td><a href="https://sites.google.com/view/showlab">Mike Z. Shou</a></td>
+            <td>Prompting in Video Understanding and Generation</td>
+        </tr>
+
+        <tr>
+            <td>05:00 pm - 05:30 pm</td>
+            <td>Panel discussion</td>
+            <td><a href="https://people.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>05:30 pm - 05:40 pm</td>
+            <td>Closing</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Accepted Papers</h2>
+
+    <table>
+        <tr>
+            <td><b>Title</b></td>
+            <td><b>Author</b></td>
+        </tr>
+        
+        <tr>
+            <td>What Makes Multimodal In-Context Learning Work?</td>
+            <td>Folco Bertini Baldassini, Mustafa Shukor, Matthieu Cord, Laure Soulier, Benjamin Piwowarski</td>
+        </tr>
+        
+        <tr>
+            <td>Conv-Adapter: Exploring Parameter Efficient Transfer Learning for ConvNets</td>
+            <td>Hao Chen, Ran Tao, Han Zhang, Yidong Wang, Xiang Li, Wei Ye, Jindong Wang, Guosheng Hu, Marios Savvides</td>
+        </tr>
+
+        <tr>
+            <td>Enhancing Visual Question Answering through Question-Driven Image Captions as Prompts</td>
+            <td>Övgü Özdemir, Erdem Akagündüz</td>
+        </tr>
+
+        <tr>
+            <td>AAPL: Adding Attributes to Prompt Learning</td>
+            <td>Gahyeon Kim, Sohee Kim, Seokju Lee</td>
+        </tr>
+
+        <tr>
+            <td>Prompting Foundational Models for Omni-supervised Instance Segmentation</td>
+            <td>Arnav Mohanty Das, Ritwick Chaudhry, Kaustav Kundu, Davide Modolo</td>
+        </tr>
+
+        <tr>
+            <td>On the low-shot transferability of [V]-Mamba</td>
+            <td>Diganta Misra, Jay Gala, Antonio Orvieto</td>
+        </tr>
+
+        <tr>
+            <td>Low-Rank Few-Shot Adaptation of Vision-Language Models</td>
+            <td>Maxime Zanella, Ismail Ben Ayed</td>
+        </tr>
+
+        <tr>
+            <td>PointPrompt: A Multi-modal Prompting Dataset for Segment Anything Model</td>
+            <td>Jorge Quesada, Mohammad Alotaibi, Mohit Prabhushankar, Ghassan AlRegib</td>
+        </tr>
+
+        <tr>
+            <td>Uncovering the Hidden Cost of Model Compression</td>
+            <td>Diganta Misra, Muawiz Sajjad Chaudhary, Bharat Runwal, Agam Goyal, Pin-Yu Chen</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Organizers</h2>
+
+    <div class="row">
+        <div class="column">
+            <a href="https://kaiyangzhou.github.io/">
+                <img src="people/ky.jpg" alt="Kaiyang Zhou">
+                <div>Kaiyang Zhou<br>HKBU</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://www.amirbar.net/">
+                <img src="people/amir_bar.jpg" alt="Amir Bar">
+                <div>Amir Bar<br>TAU / Berkeley</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://liuziwei7.github.io/">
+                <img src="people/ziwei.jpg" alt="Ziwei Liu">
+                <div>Ziwei Liu<br>NTU</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://yossigandelsman.github.io/">
+                <img src="people/yossi_gandelsman.jpeg" alt="Yossi Gandelsman">
+                <div>Yossi Gandelsman<br>Berkeley</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <a href="https://pages.cs.wisc.edu/~sharonli/">
+                <img src="people/yixuanli.jpeg" alt="Yixuan Li">
+                <div>Yixuan Li<br>UW–Madison</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://hjbahng.github.io/">
+                <img src="people/hyojin.png" alt="Hyojin Bahng">
+                <div>Hyojin Bahng<br>MIT</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://www.microsoft.com/en-us/research/people/linjli/">
+                <img src="people/linjieli.jpeg" alt="Linjie Li">
+                <div>Linjie Li<br>Microsoft</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://cs3801.wixsite.com/amirgloberson">
+                <img src="people/amir_globerson.png" alt="Amir Globerson">
+                <div>Amir Globerson<br>TAU</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <a href="https://zhangyuanhan-ai.github.io/">
+                <img src="people/yuanhan_zhang.png" alt="Yuanhan Zhang">
+                <div>Yuanhan Zhang<br>NTU</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://brianboli.com/">
+                <img src="people/libo.jpeg" alt="Bo Li">
+                <div>Bo Li<br>NTU</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://jingkang50.github.io/">
+                <img src="people/jingkang_yang.png" alt="Jingkang Yang">
+                <div>Jingkang Yang<br>NTU</div>
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://www.xloong.wang/">
+                <img src="people/xinlong_wang.png" alt="Xinlong Wang">
+                <div>Xinlong Wang<br>BAAI</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Contact</h2>
+    <div class="text-content">
+        <p>Please contact <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a> and <a href="https://www.amirbar.net/">Amir Bar</a> for general inquiries.</p>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Links</h2>
+    <div class="text-content">
+        <a href="index_cvpr23.html">CVPR 2023 Tutorial on Prompting in Vision</a>
+    </div>
+</div>
+
+<br>
+
 </body>
 </html>
